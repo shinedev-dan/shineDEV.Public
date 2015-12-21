@@ -65,3 +65,6 @@ TestResults/
 ehthumbs.db
 Icon?
 Thumbs.db
+*.vspscc
+1.0/Plugins/AccountPlugin/AccountPlugin.csproj.vspscc
+*.vspscc
