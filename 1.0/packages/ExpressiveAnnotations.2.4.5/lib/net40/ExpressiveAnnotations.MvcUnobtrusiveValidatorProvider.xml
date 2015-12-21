@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider</name>
+    </assembly>
+    <members>
+        <member name="T:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.RequestStorage">
+            <summary>
+                Stores arbitrary data for the current HTTP request.
+            </summary>
+        </member>
+        <member name="T:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.AssertThatValidator">
+            <summary>
+                Model validator for <see cref="T:ExpressiveAnnotations.Attributes.AssertThatAttribute"/>.
+            </summary>
+        </member>
+        <member name="T:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.ExpressiveValidator`1">
+            <summary>
+                Base class for expressive model validators.
+            </summary>
+            <typeparam name="T">Any type derived from <see cref="T:ExpressiveAnnotations.Attributes.ExpressiveAttribute"/> class.</typeparam>
+        </member>
+        <member name="M:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.ExpressiveValidator`1.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,`0)">
+            <summary>
+                Constructor for expressive model validator.
+            </summary>
+            <param name="metadata">The model metadata instance.</param>
+            <param name="context">The controller context instance.</param>
+            <param name="attribute">The expressive attribute instance.</param>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException"></exception>
+        </member>
+        <member name="M:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.ExpressiveValidator`1.ProvideUniqueValidationType(System.String)">
+            <summary>
+                Provides unique validation type within current annotated field range, when multiple annotations are used (required for client-side).
+            </summary>
+            <param name="baseName">Base name.</param>
+            <returns>
+                Unique validation type within current request.
+            </returns>
+        </member>
+        <member name="P:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.ExpressiveValidator`1.Expression">
+            <summary>
+                Gets the expression.
+            </summary>
+        </member>
+        <member name="P:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.ExpressiveValidator`1.FormattedErrorMessage">
+            <summary>
+                Gets the formatted error message.
+            </summary>
+        </member>
+        <member name="P:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.ExpressiveValidator`1.FieldsMap">
+            <summary>
+                Gets names and coarse types of properties extracted from specified expression within given context.
+            </summary>        
+        </member>
+        <member name="P:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.ExpressiveValidator`1.ConstsMap">
+            <summary>
+                Gets names and values of constants extracted from specified expression within given context.
+            </summary>        
+        </member>
+        <member name="M:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.AssertThatValidator.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,ExpressiveAnnotations.Attributes.AssertThatAttribute)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.AssertThatValidator"/> class.
+            </summary>
+            <param name="metadata">The model metadata instance.</param>
+            <param name="context">The controller context instance.</param>
+            <param name="attribute">The expressive assertion attribute instance.</param>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException"></exception>
+        </member>
+        <member name="M:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.AssertThatValidator.GetClientValidationRules">
+            <summary>
+                Retrieves a collection of client validation rules (which are next sent to browsers).
+            </summary>
+            <returns>
+                A collection of client validation rules.
+            </returns>
+        </member>
+        <member name="T:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.RequiredIfValidator">
+            <summary>
+                Model validator for <see cref="T:ExpressiveAnnotations.Attributes.RequiredIfAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.RequiredIfValidator.#ctor(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext,ExpressiveAnnotations.Attributes.RequiredIfAttribute)">
+            <summary>
+                Initializes a new instance of the <see cref="T:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.RequiredIfValidator"/> class.
+            </summary>
+            <param name="metadata">The model metadata instance.</param>
+            <param name="context">The controller context instance.</param>
+            <param name="attribute">The expressive requirement attribute instance.</param>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException"></exception>
+        </member>
+        <member name="M:ExpressiveAnnotations.MvcUnobtrusiveValidatorProvider.Validators.RequiredIfValidator.GetClientValidationRules">
+            <summary>
+                Retrieves a collection of client validation rules (which are next sent to browsers).
+            </summary>
+            <returns>
+                A collection of client validation rules.
+            </returns>
+        </member>
+    </members>
+</doc>

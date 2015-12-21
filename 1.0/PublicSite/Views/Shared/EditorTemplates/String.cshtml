@@ -1,0 +1,5 @@
+﻿@{ 
+    Layout = "~/Views/Shared/EditorTemplates/_Layout.cshtml";
+    Common.Controllers.BaseController.CleanseViewData(ViewData);
+}
+@Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue, ViewData)

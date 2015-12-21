@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/DisplayTemplates/_Layout.cshtml";
+    Common.Controllers.BaseController.CleanseViewData(ViewData);
+}
+@if (Model == null || string.IsNullOrWhiteSpace(Model.ToString()))
+{
+    <p class="form-control-static">
+        @ViewData.TemplateInfo.FormattedModelValue
+    </p>
+}
+else
+{
+    <p class="form-control-static">
+        <a href="@Html.AttributeEncode(ViewData.Model)">@ViewData.TemplateInfo.FormattedModelValue</a>
+    </p>
+}

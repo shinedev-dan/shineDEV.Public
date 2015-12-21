@@ -1,0 +1,290 @@
+﻿@{
+    ViewBag.PageTitle = "Home Page";
+}
+@*@Html.Action("Widget", "PluginBase", new { widgetId = "TemplateIndex" })*@
+
+<!-- Home Page
+    ==========================================-->
+<div id="tf-home" class="text-center">
+    <div class="overlay">
+        <div class="content">
+            @*<h1>Welcome to <strong><span class="color">Sunshine Web Development</span></strong></h1>*@
+            <h1><strong>we build <span class="color">great websites</span></strong></h1>
+            <p class="lead">our websites are <strong>mobile ready</strong> and <strong>business ready</strong></p>
+            <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
+        </div>
+    </div>
+</div>
+<!-- About Us Page
+==========================================-->
+<div id="tf-about" class="text-center">
+    <div class="container">
+        <div class="section-title center">
+            <h2>Some words <strong>about</strong> us</h2>
+            <div class="line">
+                <hr>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/Content/Images/Misc/tablet-640.jpg" class="img-responsive">
+            </div>
+            <div class="col-md-6">
+                <div class="about-text text-left">
+                    @*<p class="intro">We love building and rebuilding brands through our  specific skills. Using colour, fonts, and illustration, we brand companies in a way they will never forget.</p>*@
+                    <p style="margin-bottom:10px;" class="intro">We are based in the beautiful Space Coast, FL and are proud to serve businesses near and far.&nbsp;&nbsp;We are extremely passionate about creating websites and developing for the web.</p>
+                    <p>We understand that no two projects are the same and we embrace the challenges involved.&nbsp;&nbsp;Please do not hesitate to <a href="#tf-contact">contact us</a> any time to learn more about what we can do for you.</p>
+                    <ul class="about-list">
+                        <li>
+                            <span class="fa fa-dot-circle-o"></span>
+                            <strong>Mission</strong> - <em>To meet requirements and exceed expectations</em>
+                        </li>
+                        <li>
+                            <span class="fa fa-dot-circle-o"></span>
+                            <strong>Skills</strong> - <em>Creative thinking, adaptability &amp; customer focus</em>
+                        </li>
+                        <li>
+                            <span class="fa fa-dot-circle-o"></span>
+                            <strong>Technology</strong> - <em>ASP.NET, MVC, jQuery, CSS3, Bootstrap and many more!</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services Section
+==========================================-->
+<div id="tf-services" class="text-center">
+    <div class="container">
+        <div class="section-title center">
+            <h2>See what <strong>services</strong> we offer</h2>
+            <div class="line">
+                <hr>
+            </div>
+            <div class="clearfix"></div>
+            @*<small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</em></small>*@
+            <p class="intro">We are here to serve you so please do not hesitate to <a href="#tf-contact">contact us</a>.</p>
+        </div>
+        <div class="space"></div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 service">
+                <i class="fa fa-desktop"></i>
+                <h4><strong>Website Design</strong></h4>
+                <p>We build websites that do what you need and look great on any device</p>
+            </div>
+            <div class="col-md-3 col-sm-6 service">
+                <i class="fa fa-mobile"></i>
+                <h4><strong>Web Development</strong></h4>
+                <p>We build custom web based solutions for your growing business</p>
+            </div>
+            <div class="col-md-3 col-sm-6 service">
+                <i class="fa fa-camera"></i>
+                <h4><strong>Data Managment</strong></h4>
+                <p>We can process, transform and manage your data</p>
+            </div>
+            <div class="col-md-3 col-sm-6 service">
+                <i class="fa fa-bullhorn"></i>
+                <h4><strong>Domains, Hosting &amp; More</strong></h4>
+                <p>We have the knowledge to cater for all your needs</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio Section
+==========================================-->
+<div id="tf-works">
+    <div class="container">
+        <!-- Container -->
+        <div class="section-title text-center center">
+            <h2>Take a look at our <strong>portfolio</strong></h2>
+            <div class="line">
+                <hr>
+            </div>
+            <div class="clearfix"></div>
+            @*<small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</em></small>*@
+        </div>
+        @*<div class="space"></div>
+        <div class="categories">
+            <ul class="cat">
+                <li class="pull-left"><h4>Filter by Type:</h4></li>
+                <li class="pull-right">
+                    <ol class="type">
+                        <li><a href="#" data-filter="*" class="active">All</a></li>
+                        <li><a href="#" data-filter=".web">Web Design</a></li>
+                        <li><a href="#" data-filter=".photography">Photography</a></li>
+                        <li><a href="#" data-filter=".app">Mobile App</a></li>
+                        <li><a href="#" data-filter=".branding">Branding</a></li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>*@
+        <div id="lightbox" class="row">
+            <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="http://1.example.shinedev.com" target="_blank">
+                            <div class="hover-text">
+                                <h4>The Project Site</h4>
+                                <small>A fully responsive website<br/>with public membership</small>
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="~/Content/Images/Examples/Example1.jpg" class="img-responsive" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 photography app">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="http://2.example.shinedev.com" target="_blank">
+                            <div class="hover-text">
+                                <h4>shineDEV Store</h4>
+                                <small>A  full  featured eCommerce site</small>
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="~/Content/Images/Examples/Example2.jpg" class="img-responsive" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="http://gdc.shinedev.com" target="_blank">
+                            <div class="hover-text">
+                                <h4>Global Dredging International</h4>
+                                <small>A responsive brochure site</small>
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="~/Content/Images/Examples/Example3.jpg" class="img-responsive" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="#">
+                            <div class="hover-text">
+                                <h4>Example 4</h4>
+                                <small>Name / Type</small>
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="~/Content/Images/Misc/ball-mystery-640.jpg" class="img-responsive" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 web">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="#">
+                            <div class="hover-text">
+                                <h4>Example 5</h4>
+                                <small>Name / Type</small>
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="~/Content/Images/Misc/ball-mystery-640.jpg" class="img-responsive" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 app">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="#">
+                            <div class="hover-text">
+                                <h4>Example 6</h4>
+                                <small>Name / Type</small>
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="~/Content/Images/Misc/ball-mystery-640.jpg" class="img-responsive" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 photography web">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="#">
+                            <div class="hover-text">
+                                <h4>Example 7</h4>
+                                <small>Name / Type</small>
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="~/Content/Images/Misc/ball-mystery-640.jpg" class="img-responsive" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3 web">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="#">
+                            <div class="hover-text">
+                                <h4>Example 8</h4>
+                                <small>Name / Type</small>
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="~/Content/Images/Misc/ball-mystery-640.jpg" class="img-responsive" alt="...">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Section
+==========================================-->
+<div id="tf-contact" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="section-title center">
+                    <h2>Feel free to <strong>contact</strong> us</h2>
+                    <div class="line">
+                        <hr>
+                    </div>
+                    <div class="clearfix"></div>
+                    <p>Don't hesitate to get in contact if you would like to learn more about us, or have any specific questions or comments.&nbsp;&nbsp;We can't wait to hear from you.</p>
+                </div>
+                @Html.Action("Widget", "PluginBase", new { widgetId = "ContactPlugin.BasicForm" })
+                @*<form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Message</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn tf-btn btn-default">Submit</button>
+                </form>*@
+            </div>
+            
+        </div>
+    </div>
+    <br />&nbsp;
+</div>

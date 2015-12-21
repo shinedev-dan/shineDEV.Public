@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/DisplayTemplates/_Layout.cshtml";
+    Common.Controllers.BaseController.CleanseViewData(ViewData);
+
+    var defaultHtmlAttributesObject = new { disabled = "disabled" };
+    var htmlAttributesObject = ViewData["htmlAttributes"] ?? new { };
+    var htmlAttributes = Html.MergeHtmlAttributes(htmlAttributesObject, defaultHtmlAttributesObject);
+}
+@{
+    bool? value = null;
+    if (ViewData.Model != null)
+    {
+        value = Convert.ToBoolean(ViewData.Model, System.Globalization.CultureInfo.InvariantCulture);
+    }
+}
+@if (ViewData.ModelMetadata.IsNullableValueType)
+{
+    var triStateValues = new List<SelectListItem>
+    {
+        new SelectListItem {Text = "Not Set", Value = String.Empty, Selected = !value.HasValue},
+        new SelectListItem {Text = "True", Value = "true", Selected = value.HasValue && value.Value},
+        new SelectListItem {Text = "False", Value = "false", Selected = value.HasValue && !value.Value},
+    };
+    <p class="form-control-static">
+        @Html.DropDownList("", triStateValues, ViewData)
+    </p>
+}
+else
+{
+    <p class="form-control-static">
+        @Html.CheckBox("", value ?? false, ViewData)
+    </p>
+}

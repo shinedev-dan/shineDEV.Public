@@ -1,0 +1,32 @@
+﻿@model ContactPlugin.Models.ContactFormBasic
+
+<div id="contactForm">
+    @using (Ajax.BeginForm("BasicForm", "Contact", null, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "contactForm", InsertionMode = InsertionMode.ReplaceWith }, new { @class = "" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Partial("_ValidationSummary", ViewData.ModelState)
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name)
+            @Html.EditorFor(m => m.Name, new { @class = "form-control" })
+            @*<input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">*@
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.EmailAddress)
+            @Html.EditorFor(m => m.EmailAddress, new { @class = "form-control" })
+            @*<input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">*@
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.PhoneNumber)
+            @Html.EditorFor(m => m.PhoneNumber, new { @class = "form-control" })
+            @*<input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">*@
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Message)
+            @Html.EditorFor(m => m.Message, new { @class = "form-control", textarea = "true", rows = 10 })
+            @*<textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>*@
+        </div>
+        <div class="form-group form-actions">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+    }
+</div>

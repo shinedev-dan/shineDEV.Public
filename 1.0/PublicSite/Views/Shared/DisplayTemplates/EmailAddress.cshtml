@@ -1,0 +1,7 @@
+﻿@{ 
+    Layout = "~/Views/Shared/DisplayTemplates/_Layout.cshtml";
+    Common.Controllers.BaseController.CleanseViewData(ViewData);
+}
+<p class="form-control-static">
+    <a href="mailto:@Html.AttributeEncode(Model)">@ViewData.TemplateInfo.FormattedModelValue</a>
+</p>

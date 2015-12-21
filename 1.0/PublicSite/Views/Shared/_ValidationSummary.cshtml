@@ -1,0 +1,40 @@
+﻿@model ModelStateDictionary
+@*<div class='@(Html.ViewData.ModelState.IsValid ? "validation-summary-valid" : "validation-summary-errors") panel panel-danger' data-valmsg-summary="true">
+        <div class="panel-heading"> Please, correct the following errors: </div>
+        <div class="panel-body">
+            <ul> @foreach (var modelError in Model.SelectMany(keyValuePair => keyValuePair.Value.Errors))
+            {
+            <li>@modelError.ErrorMessage</li> } </ul>
+        </div>
+    </div>*@
+<div class='@(Html.ViewData.ModelState.IsValid ? "validation-summary-valid" : "validation-summary-errors") alert alert-danger' data-valmsg-summary="true">
+    <h5> Please, correct the following errors: </h5>
+    <ul>
+        @foreach (var modelError in Model.SelectMany(keyValuePair => keyValuePair.Value.Errors))
+        {
+            <li>@modelError.ErrorMessage</li> }
+    </ul>
+</div>
+
+@if (TempData[Common.Controllers.BaseController.MessageType.Success] != null)
+{
+    <div class='alert alert-success message-summary-success'>
+        <ul>
+            @foreach (var msg in TempData[Common.Controllers.BaseController.MessageType.Success] as List<String>)
+            {
+                <li>@msg</li>
+            }
+        </ul>
+    </div>
+}
+@if (TempData[Common.Controllers.BaseController.MessageType.Info] != null)
+{
+    <div class='alert alert-success message-summary-success'>
+        <ul>
+            @foreach (var msg in TempData[Common.Controllers.BaseController.MessageType.Info] as List<String>)
+            {
+                <li>@msg</li>
+            }
+        </ul>
+    </div>
+}

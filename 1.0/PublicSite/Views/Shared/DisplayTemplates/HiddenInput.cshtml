@@ -1,0 +1,7 @@
+﻿@{ 
+    Layout = "~/Views/Shared/DisplayTemplates/_Layout.cshtml";
+    Common.Controllers.BaseController.CleanseViewData(ViewData);
+}
+@if(!Html.ViewContext.ViewData.ModelMetadata.HideSurroundingHtml) { 
+	@ViewData.TemplateInfo.FormattedModelValue
+}

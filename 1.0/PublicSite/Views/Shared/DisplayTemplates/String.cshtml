@@ -1,0 +1,8 @@
+﻿@{ 
+    Layout = "~/Views/Shared/DisplayTemplates/_Layout.cshtml";
+    Common.Controllers.BaseController.CleanseViewData(ViewData);
+}
+<!-- string -->
+<p class="form-control-static">
+    @ViewData.TemplateInfo.FormattedModelValue
+</p>

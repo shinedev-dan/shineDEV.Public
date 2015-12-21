@@ -1,0 +1,5 @@
+﻿@{ 
+    Layout = "~/Views/Shared/DisplayTemplates/_Layout.cshtml";
+    Common.Controllers.BaseController.CleanseViewData(ViewData);
+}
+@Html.Raw(Html.ViewContext.ViewData.TemplateInfo.FormattedModelValue)

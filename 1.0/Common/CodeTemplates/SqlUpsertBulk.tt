@@ -1,0 +1,93 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+
+<#@ output extension="SQL" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="Microsoft.SqlServer.ConnectionInfo" #>
+<#@ assembly name="Microsoft.SqlServer.Smo" #>
+<#@ assembly name="Microsoft.SqlServer.Management.Sdk.Sfc" #>
+<#@ import namespace="Microsoft.SqlServer.Management.Smo" #>
+
+<#@ assembly name="$(ProjectDir)/bin/Common.dll" #>
+<#@ import namespace="Common.Helpers" #>
+<#@ include file="Utils.tt" once="true" #>
+
+<#+ public void GenerateUpsertBulk(Database db, String t)  {
+	Table table = new Table(db, t);
+	table.Refresh();
+
+	var spName = String.Format("usp_{0}_UpsertBulk", table.Name);
+	CheckSpExists(spName);
+
+	WriteLine(String.Format("ALTER PROCEDURE [dbo].[{0}]", spName));
+	WriteLine("AS");
+	WriteLine("BEGIN");
+
+	PushIndent("\t");
+	WriteLine("SET NOCOUNT ON;");
+	WriteLine("DECLARE @OutputHolder TABLE ([Id] BIGINT, [BulkSaveId] BIGINT, [UpsertAction] VARCHAR(32));");
+	WriteLine(String.Format("MERGE INTO [dbo].[{0}] trg", table.Name));
+	WriteLine("USING (");
+	PushIndent("\t");
+	WriteLine(String.Format("SELECT * FROM #BulkSave{0}", table.Name));
+	PopIndent();
+	WriteLine(") as src");
+	WriteLine("ON trg.Id = src.Id AND scr.Id > 0");
+	WriteLine("WHEN MATCHED THEN");
+	PushIndent("\t");
+	WriteLine("UPDATE SET");
+	PushIndent("\t");
+	var first = true;
+    foreach (Column column in T4Helper.Sql.GetColumns(table, false, true))
+    {
+		WriteLine(String.Format("{0}[{1}] = src.[{1}]"
+			, first ? String.Empty : ", "
+			, column.Name));
+		if(first)
+			first = false;
+    }
+	PopIndent();
+	PopIndent();
+	WriteLine("WHEN NOT MATCHED THEN");
+	PushIndent("\t");
+	WriteLine("INSERT (");
+	PushIndent("\t");
+	first = true;
+	foreach (Column column in T4Helper.Sql.GetColumns(table, false, true))
+    {
+		var p = String.Format("{0}[{1}]",
+			first ? String.Empty : ", "
+			, column.Name
+			, column.DataType.Name.ToUpper());
+        WriteLine(p);
+		if(first)
+			first = false;
+    }
+	PopIndent();
+	WriteLine(") VALUES (");
+	PushIndent("\t");
+	first = true;
+	foreach (Column column in T4Helper.Sql.GetColumns(table, false, true))
+    {
+		var p = String.Format("{0}src.[{1}]",
+			first ? String.Empty : ", "
+			, column.Name);
+        WriteLine(p);
+		if(first)
+			first = false;
+    }
+	PopIndent();
+	WriteLine(")");
+	PopIndent();
+	WriteLine("OUTPUT inserted.Id, src.BulkSaveId, $Action");
+	WriteLine("INTO @OutputHolder([Id], [BulkSaveId], [UpsertAction]);");
+	WriteLine("SELECT * FROM @OutputHolder");
+
+	PopIndent();
+	PopIndent();
+	WriteLine("END");
+	WriteLine(String.Empty);
+	WriteLine("GO");
+	WriteLine(String.Empty);
+	WriteLine(String.Empty);
+
+} #>

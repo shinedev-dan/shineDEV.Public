@@ -1,0 +1,9 @@
+﻿@{ 
+    Layout = "~/Views/Shared/EditorTemplates/_Layout.cshtml";
+    Common.Controllers.BaseController.CleanseViewData(ViewData);
+
+    var defaultHtmlAttributesObject = new { type = "number" };
+    var htmlAttributesObject = ViewData["htmlAttributes"] ?? new { };
+    var htmlAttributes = Html.MergeHtmlAttributes(htmlAttributesObject, defaultHtmlAttributesObject);
+}
+@Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue, ViewData)
